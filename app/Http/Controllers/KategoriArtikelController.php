@@ -11,4 +11,9 @@ class KategoriArtikelController extends Controller
         $listKategoriArtikel=KategoriArtikel::all();
         return view('kategori_artikel.index',compact('listKategoriArtikel'));
     }
+
+    public function show($id){ 
+        $kategoriArtikel=KategoriArtikel::find($id);
+        return view('kategori_artikel.show',compact('kategoriArtikel'));
+    }
 }

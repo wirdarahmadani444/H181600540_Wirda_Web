@@ -11,4 +11,9 @@ class KategoriBeritaController extends Controller
         $listKategoriBerita=KategoriBerita::all();
         return view('kategori_berita.index',compact('listKategoriBerita'));
     }
+
+    public function show($id){ 
+        $kategoriBerita=KategoriBerita::find($id);
+        return view('kategori_berita.show',compact('kategoriBerita'));
+    }
 }

@@ -11,4 +11,9 @@ class KategoriPengumumanController extends Controller
         $listKategoriPengumuman=KategoriPengumuman::all();
         return view('kategori_pengumuman.index',compact('listKategoriPengumuman'));
     }
+
+    public function show($id){ 
+        $kategoriPengumuman=KategoriPengumuman::find($id);
+        return view('kategori_pengumuman.show',compact('kategoriPengumuman'));
+    }
 }

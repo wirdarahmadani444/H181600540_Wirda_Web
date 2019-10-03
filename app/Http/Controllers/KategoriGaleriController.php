@@ -11,4 +11,9 @@ class KategoriGaleriController extends Controller
         $listKategoriGaleri=KategoriGaleri::all();
         return view('kategori_galeri.index',compact('listKategoriGaleri'));
     }
+
+    public function show($id){ 
+        $kategoriGaleri=KategoriGaleri::find($id);
+        return view('kategori_galeri.show',compact('kategoriGaleri'));
+    }
 }

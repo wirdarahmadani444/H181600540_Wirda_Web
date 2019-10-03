@@ -23,6 +23,7 @@
                             <td>Create</td>
                             <td>Update</td>
                             <td>Kategori_artikel_id</td>
+                            <td>Aksi</td>
                         </tr>
                         @foreach($listArtikel as $item)
                         <tr>
@@ -30,9 +31,14 @@
                             <td>{!! $item->judul !!}</td>
                             <td>{!! $item->isi !!}</td>
                             <td>{!! $item->users_id !!}</td>
-                            <td>{!! $item->created_at!!}</td>
-                            <td>{!! $item->updated_at!!}</td>
+                            <td>{!! $item->created_at->format('d/m/Y H:i:s') !!}</td>
+                            <td>{!! $item->updated_at->format('d/m/Y H:i:s') !!}</td>
                             <td>{!! $item->kategori_artikel_id!!}</td>
+                            <td>
+                                <a href="{!! route('artikel.show',[$item->id]) !!}" class="btn btn-sm btn-primary">
+                                    Lihat
+                                </a>
+                            </td>
                         </tr>
                         @endforeach
                     </table>
