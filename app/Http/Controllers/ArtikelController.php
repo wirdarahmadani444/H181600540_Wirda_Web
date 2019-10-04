@@ -16,4 +16,16 @@ class ArtikelController extends Controller
         $Artikel=Artikel::find($id);
         return view('artikel.show',compact('Artikel'));
     }
+
+    public function create(){
+        return view('artikel.create');
+    }
+
+    public function store(Request $request){
+        $input= $request->all();
+     
+     Artikel::create($input);
+
+     return redirect(route('artikel.index'));
+    }
 }

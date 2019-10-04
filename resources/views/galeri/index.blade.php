@@ -13,7 +13,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
+                    <a href="{!! route('galeri.create') !!}" class="btn btn-primary">Tambahkan Data</a>
                     <table border='2'>
                         <tr>
                             <td>ID</td>

@@ -16,4 +16,16 @@ class KategoriPengumumanController extends Controller
         $kategoriPengumuman=KategoriPengumuman::find($id);
         return view('kategori_pengumuman.show',compact('kategoriPengumuman'));
     }
+
+    public function create(){
+        return view('kategori_pengumuman.create');
+    }
+
+    public function store(Request $request){
+        $input= $request->all();
+     
+     Kategoripengumuman::create($input);
+
+     return redirect(route('kategori_pengumuman.index'));
+    }
 }
