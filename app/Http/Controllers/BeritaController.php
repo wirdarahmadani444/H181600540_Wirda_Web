@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Berita;
+use App\KategoriBerita;
 
 class BeritaController extends Controller
 {
@@ -18,7 +19,10 @@ class BeritaController extends Controller
     }
 
     public function create(){
-        return view('berita.create');
+        
+        $kategoriBerita= KategoriBerita::pluck('nama','id');
+
+        return view('berita.create',compact('kategoriBerita'));
     }
 
     public function store(Request $request){

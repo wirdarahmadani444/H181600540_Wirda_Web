@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Galeri;
+use App\KategoriGaleri;
 
 class GaleriController extends Controller
 {
@@ -18,7 +19,10 @@ class GaleriController extends Controller
     }
 
     public function create(){
-        return view('galeri.create');
+
+        $kategoriGaleri= KategoriGaleri::pluck('nama','id');
+
+        return view('galeri.create',compact('kategoriGaleri'));
     }
 
     public function store(Request $request){
