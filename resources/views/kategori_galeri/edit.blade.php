@@ -8,7 +8,7 @@
                 <div class="card-header">Tambah Kategori Galeri</div>                
                
                 <div class="card-body">
-                    {!! Form::open(['route' => 'kategori_galeri.store', 'method' => 'post']) !!}
+                    {!! Form::model($kategoriGaleri, ['route' => ['kategori_galeri.update', $kategoriGaleri->id],'method'=>'patch']) !!}
                         @include('kategori_galeri.form')
                     {!! Form::close() !!}
                 </div>
@@ -16,5 +16,4 @@
         </div>
     </div>
 </div>
-
 @endsection

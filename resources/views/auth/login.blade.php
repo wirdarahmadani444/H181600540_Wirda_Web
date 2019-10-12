@@ -54,7 +54,7 @@
 
                             <div class="col-md-6">
                                 <div class="captcha">
-                                    <span>{!! captcha_img() !!}</span>
+                                    <span>{!! captcha_img('flat') !!}</span>
                                     <button type="button" class="btn btn-success btn-refresh">Refresh</button>
                                 </div>
                                 

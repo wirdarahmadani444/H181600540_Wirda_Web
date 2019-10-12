@@ -35,8 +35,12 @@
                             <td>{!! $item->updated_at->format('d/m/Y H:i:s') !!}</td>
                             <td>{!! $item->kategori_berita_id!!}</td>
                             <td>
-                                <a href="{!! route('berita.show',[$item->id]) !!}" class="btn btn-sm btn-primary">
+                                <a href="{!! route('berita.show',[$item->id]) !!}" class="btn btn-sm btn-success">
                                     Lihat
+                                </a>
+
+                                <a href="{!! route('berita.edit',[$item->id]) !!}" class="btn btn-sm btn-warning">
+                                    Ubah
                                 </a>
                             </td>
                         </tr>

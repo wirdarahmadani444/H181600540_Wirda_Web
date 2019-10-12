@@ -15,6 +15,11 @@ class ArtikelController extends Controller
 
     public function show($id){ 
         $Artikel=Artikel::find($id);
+
+        if(empty($Artikel)){
+            return redirect(route('artikel.index'));
+        }
+
         return view('artikel.show',compact('Artikel'));
     }
 
@@ -31,6 +36,29 @@ class ArtikelController extends Controller
      Artikel::create($input);
 
      return redirect(route('artikel.index'));
+    }
+
+    public function edit($id){
+        $Artikel=Artikel::find($id);
+        $kategoriArtikel= KategoriArtikel::pluck('nama','id');
+
+        if(empty($Artikel)){
+            return redirect(route('artikel.index'));
+        }
+        return view('artikel.edit',compact('Artikel','kategoriArtikel'));
+    }
+
+    public function update($id,Request $request){
+        $Artikel=Artikel::find($id);
+        $input= $request->all();
+
+        if(empty($Artikel)){
+            return redirect(route('artikel.index'));
+        }
+
+        $Artikel->update($input);
+
+        return redirect(route('artikel.index'));
     }
 }
 

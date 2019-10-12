@@ -31,8 +31,12 @@
                             <td>{!! $item->created_at->format('d/m/Y H:i:s') !!}</td>
                             <td>{!! $item->updated_at->format('d/m/Y H:i:s') !!}</td>
                             <td>
-                                <a href="{!! route('kategori_galeri.show',[$item->id]) !!}" class="btn btn-sm btn-primary">
+                                <a href="{!! route('kategori_galeri.show',[$item->id]) !!}" class="btn btn-sm btn-success">
                                     Lihat
+                                </a>
+
+                                <a href="{!! route('kategori_galeri.edit',[$item->id]) !!}" class="btn btn-sm btn-warning">
+                                    Ubah
                                 </a>
                             </td>
                         </tr>
