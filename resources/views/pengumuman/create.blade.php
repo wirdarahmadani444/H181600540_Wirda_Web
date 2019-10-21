@@ -8,8 +8,8 @@
                 <div class="card-header">Tambah Pengumuman</div>                
                     
                 <div class="card-body">
-                    {!! Form::open(['route' => 'kategori_pengumuman.store', 'method' => 'post']) !!}
-                        @include('kategori_pengumuman.form')
+                    {!! Form::open(['route' => 'pengumuman.store', 'method' => 'post']) !!}
+                        @include('pengumuman.form')
                     {!! Form::close() !!}
                 </div>
                 </div>

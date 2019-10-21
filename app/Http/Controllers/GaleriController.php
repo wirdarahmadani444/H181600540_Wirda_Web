@@ -16,9 +16,9 @@ class GaleriController extends Controller
     public function show($id){ 
         $Galeri=Galeri::find($id);
 
-         //if(empty($iGaleri)){
-          //   return redirect(route('galeri.index'));
-         //}
+        if(empty($iGaleri)){
+          return redirect(route('galeri.index'));
+        }
 
         return view('galeri.show',compact('Galeri'));
     }
@@ -42,9 +42,9 @@ class GaleriController extends Controller
         $Galeri=Galeri::find($id);
         $kategoriGaleri= KategoriGaleri::pluck('nama','id');
 
-        // if(empty($iGaleri)){
-        //     return redirect(route('galeri.index'));
-        // }
+        if(empty($iGaleri)){
+            return redirect(route('galeri.index'));
+         }
         return view('galeri.edit',compact('Galeri','kategoriGaleri'));
     }
 
@@ -58,6 +58,17 @@ class GaleriController extends Controller
 
         $Galeri->update($input);
 
+        return redirect(route('galeri.index'));
+    }
+
+    public function destroy($id){
+        $Galeri=Galeri::find($id);
+
+        if(empty($Galeri)){
+            return redirect(route('galeri.index'));
+        }
+
+        $Galeri->delete();
         return redirect(route('galeri.index'));
     }
 }

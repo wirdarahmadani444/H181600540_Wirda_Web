@@ -26,6 +26,7 @@
               </span>
               @enderror
         </div>
+</div>
 
 <div class="form-group row">
         <label for="isi" class="col-md-2 col-form-label text-md-right">{{ __('Isi') }}</label>
@@ -40,7 +41,6 @@
               @enderror
         </div>
 </div>
-
 
 {!! Form::hidden('users_id',Auth::id() ); !!}
 
