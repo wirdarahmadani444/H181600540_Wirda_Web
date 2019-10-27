@@ -67,4 +67,9 @@ class KategoriPengumumanController extends Controller
         $kategoriPengumuman->delete();
         return redirect(route('kategori_pengumuman.index'));
     }
+
+    public function trash(){
+        $listKategoriPengumuman=KategoriPengumuman::onlyTrashed();
+        return view('kategori_pengumuman.index',compact('listKategoriPengumuman'));
+    }
 }
