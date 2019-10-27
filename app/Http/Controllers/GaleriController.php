@@ -16,7 +16,7 @@ class GaleriController extends Controller
     public function show($id){ 
         $Galeri=Galeri::find($id);
 
-        if(empty($iGaleri)){
+        if(empty($Galeri)){
           return redirect(route('galeri.index'));
         }
 
@@ -42,7 +42,7 @@ class GaleriController extends Controller
         $Galeri=Galeri::find($id);
         $kategoriGaleri= KategoriGaleri::pluck('nama','id');
 
-        if(empty($iGaleri)){
+        if(empty($Galeri)){
             return redirect(route('galeri.index'));
          }
         return view('galeri.edit',compact('Galeri','kategoriGaleri'));

@@ -4,7 +4,6 @@
         <label for="nama" class="col-md-2 col-form-label text-md-right">{{ __('Nama') }}</label>
             
             <div class="col-md-10">
-
             {!! Form::text('nama', null,['class'=>"form-control",'required','autofocus']); !!}
 
              @error('nama')
@@ -30,7 +29,7 @@
 </div>
 
 <div class="form-group row">
-        <label for="path" class="col-md-2 col-form-label text-md-right">{{ __('path') }}</label>
+        <label for="path" class="col-md-2 col-form-label text-md-right">{{ __('Path') }}</label>
             
             <div class="col-md-10">
                 {!! Form::textarea('path', nuLL,['class'=>'form-control']); !!}
@@ -56,7 +55,6 @@
               @enderror
         </div>
 </div>
-
 
 {!! Form::hidden('users_id',Auth::id() ); !!}
 

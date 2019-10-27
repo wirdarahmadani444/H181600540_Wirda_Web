@@ -20,7 +20,16 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('refresh_captcha', 'HomeController@refreshCaptcha')->name('refresh_captcha');
 
-Route::get('/kategori_artikel','KategoriArtikelController@index')->name('kategori_artikel.index');
+Route::resource('kategori_artikel','KategoriArtikelController');
+Route::resource('kategori_berita','KategoriBeritaController');
+Route::resource('kategori_galeri','KategoriGaleriController');
+Route::resource('kategori_pengumuman','KategoriPengumumanController');
+Route::resource('artikel','ArtikelController');
+Route::resource('berita','BeritaController');
+Route::resource('galeri','GaleriController');
+Route::resource('pengumuman','PengumumanController');
+
+/*Route::get('/kategori_artikel','KategoriArtikelController@index')->name('kategori_artikel.index');
 Route::get('/kategori_artikel/create','KategoriArtikelController@create')->name('kategori_artikel.create');
 Route::post('/kategori_artikel','KategoriArtikelController@store')->name('kategori_artikel.store');
 Route::get('/kategori_artikel/{id}','KategoriArtikelController@show')->name('kategori_artikel.show');
@@ -84,4 +93,4 @@ Route::post('/pengumuman', 'PengumumanController@store')->name('pengumuman.store
 Route::get('/pengumuman/{id}','PengumumanController@show')->name('pengumuman.show');
 Route::get('/pengumuman/{id}/edit','PengumumanController@edit')->name('pengumuman.edit');
 Route::patch('/pengumuman/{id}','PengumumanController@update')->name('pengumuman.update');
-Route::delete('/pengumuman/{id}','PengumumanController@destroy')->name('pengumuman.destroy');
+Route::delete('/pengumuman/{id}','PengumumanController@destroy')->name('pengumuman.destroy');*/
