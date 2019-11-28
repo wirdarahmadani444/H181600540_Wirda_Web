@@ -9,7 +9,7 @@
                 <div class="card-body">
                     
                 <div class="card-body">
-                    {!! Form::open(['route' => 'galeri.store', 'method' => 'post']) !!}
+                    {!! Form::open(['route' => 'galeri.store','files'=>'true','method' => 'post']) !!}
                         @include('galeri.form')
                     {!! Form::close() !!}
                 </div>
@@ -24,7 +24,7 @@
 
     <script>
      $(document).ready(function() {
-        CKEDITOR.replace( 'path' );
+        CKEDITOR.replace( );
     });
     </script>
    

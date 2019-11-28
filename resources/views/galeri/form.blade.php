@@ -32,7 +32,7 @@
         <label for="path" class="col-md-2 col-form-label text-md-right">{{ __('Path') }}</label>
             
             <div class="col-md-10">
-                {!! Form::textarea('path', nuLL,['class'=>'form-control']); !!}
+            {!! Form::file('path', null,['class'=>"form-control",'required','autofocus']); !!}
 
              @error('path')
               <span class="invalid-feedback" role="alert">
